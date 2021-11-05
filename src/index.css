@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+  background-color:aliceblue;
+  font-family: "Ubuntu";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar{
+  height:100px;
+  width: 100%;
+  background-color:#FFCD01;
+  /*center items in navbar*/
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.navbar h1 {
+  background-color:#FFCD01;
+  margin-right:20px;
+}
+
+.navbar button{
+  margin-left:20px;
+  border:none;
+  border-radius:8px;
+  padding: 10px;
+  background-color:#74648C;
+  color: white;
+}
+
+.navbar button:hover {
+  background-color:#8975a7;
+}
+
+.create {
+  /*hides the white*/
+  background-color:#FFCD01;
+}
+
+.create p{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+}
+
+.tasks {
+  /*center*/
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  
 }
