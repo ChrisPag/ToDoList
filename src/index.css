@@ -20,7 +20,7 @@
   margin-right:20px;
 }
 
-.navbar button{
+#addTask{
   margin-left:20px;
   border:none;
   border-radius:8px;
@@ -29,7 +29,7 @@
   color: white;
 }
 
-.navbar button:hover {
+#addTask:hover {
   background-color:#8975a7;
 }
 
