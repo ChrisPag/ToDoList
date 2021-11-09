@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+/*All*/
 * {
   background-color:aliceblue;
   font-family: "Ubuntu";
 }
 
+button {
+  border:none;
+  border-radius:8px;
+  padding: 10px;
+}
+
+/*Navbar*/
 .navbar{
   height:100px;
   width: 100%;
@@ -20,27 +28,22 @@
   margin-right:20px;
 }
 
+/*Create*/
 #addTask{
   margin-left:20px;
-  border:none;
-  border-radius:8px;
-  padding: 10px;
   background-color:#74648C;
   color: white;
+  float:right;
+  margin-top:-65px;
+  margin-right:100px;
 }
 
 #addTask:hover {
   background-color:#8975a7;
 }
 
-.create {
-  /*hides the white*/
-  background-color:#FFCD01;
-  
-}
-
-.create form {
-  /*center*/
+/*Tasks*/
+.tasks{
   width:35%;
   margin: 0;
   position: absolute;
@@ -50,9 +53,32 @@
   transform: translate(-50%, -50%);
 }
 
-.create input {
+.tasks input {
   border-style:none;
   border: 1px solid rgb(192, 192, 192);
   padding:10px;
   width:100%;
+}
+
+.tasks button {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#done {
+  background-color:#00CA4E;
+  color: white;
+}
+
+#done:hover{
+  background-color:#2fdf72;
+}
+
+#cancel {
+  background-color:#FF605C;
+  color: white;
+}
+
+#cancel:hover{
+  background-color:#fa8381;
 }

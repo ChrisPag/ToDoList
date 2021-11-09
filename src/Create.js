@@ -13,11 +13,7 @@ const Create = () => {
         <div className = "create">
             <button id="addTask" onClick={handleClick}>Add Task</button>
             
-            {showTask && 
-            <Tasks/>
-            }
-
-            
+            {showTask && <Tasks/>}
         </div>
     );
 }
