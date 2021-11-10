@@ -30,12 +30,9 @@ button {
 
 /*Create*/
 #addTask{
-  margin-left:20px;
   background-color:#74648C;
   color: white;
   float:right;
-  margin-top:-65px;
-  margin-right:100px;
 }
 
 #addTask:hover {
@@ -58,6 +55,7 @@ button {
   border: 1px solid rgb(192, 192, 192);
   padding:10px;
   width:100%;
+  background-color:white;
 }
 
 .tasks button {
@@ -81,4 +79,22 @@ button {
 
 #cancel:hover{
   background-color:#fa8381;
+}
+
+/*Task preview*/
+
+.taskPreview {
+  margin: auto;
+  width: 50%;
+  text-align:center;
+}
+
+.taskPreview p{
+  background-color:white;
+  padding:10px;
+  border-radius: 8px;
+}
+
+.taskPreview p:hover{
+  background-color:rgb(221, 216, 216);
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
-const Tasks = () => {
+const Tasks = (props) => {
     const [desc, setDesc] = useState();
+    const [addClicked, setAddClicked] = useState(props.showTask);
+    const [keepShow, setKeepShow] = useState(addClicked);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -15,8 +17,14 @@ const Tasks = () => {
         })
     }
 
+    const handleClick = () => {
+        setKeepShow(false);
+        setAddClicked(false);
+    }
+
     return (
         <div className="tasks">
+            {keepShow &&
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -24,11 +32,12 @@ const Tasks = () => {
                     value={ desc }
                     onChange = {(e) => setDesc(e.target.value)}
                 />
-                <button type="submit" id="done">Done</button>
-                <button id="cancel">Cancel</button>
+                <button type="submit" id="done" onClick={handleClick}>Done</button>
             </form>
-            
-            
+            }   
+            {keepShow &&
+                <button id="cancel" onClick={handleClick}>Cancel</button>
+            }
         </div>
     );
 }

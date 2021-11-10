@@ -1,21 +1,19 @@
 import { useState } from 'react';
 import Tasks from './Tasks';
 
-const Create = () => {
-    
+const AddTask = () =>{
+
     const [showTask, setShowTask] = useState(false);
-    
     const handleClick = () => {
         setShowTask(true)
     }
 
     return (
-        <div className = "create">
+        <div>
             <button id="addTask" onClick={handleClick}>Add Task</button>
-            
-            {showTask && <Tasks/>}
+            {showTask && <Tasks showTask={true}/>}
         </div>
-    );
+    )
 }
 
-export default Create;
+export default AddTask;
