@@ -1,12 +1,11 @@
-import { useState } from 'react';
-
-const Tasks = (props) => {
-    const [desc, setDesc] = useState();
-    const [addClicked, setAddClicked] = useState(props.showTask);
-    const [keepShow, setKeepShow] = useState(addClicked);
+import { useState} from 'react';
+import React from 'react';
+//dont forget you changed showTask to value
+const Tasks = () => {
+    const [desc, setDesc] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        //e.preventDefault();
         const task = {desc}
         fetch('http://localhost:8000/tasks', {
             method: 'POST',
@@ -17,14 +16,10 @@ const Tasks = (props) => {
         })
     }
 
-    const handleClick = () => {
-        setKeepShow(false);
-        setAddClicked(false);
-    }
-
+    //changed keepShow to addClicked
     return (
         <div className="tasks">
-            {keepShow &&
+            {//addClicked &&
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -32,11 +27,8 @@ const Tasks = (props) => {
                     value={ desc }
                     onChange = {(e) => setDesc(e.target.value)}
                 />
-                <button type="submit" id="done" onClick={handleClick}>Done</button>
+                <button type="submit" id="done">Done</button>
             </form>
-            }   
-            {keepShow &&
-                <button id="cancel" onClick={handleClick}>Cancel</button>
             }
         </div>
     );
