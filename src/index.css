@@ -72,15 +72,6 @@ button {
   background-color:#2fdf72;
 }
 
-#cancel {
-  background-color:#FF605C;
-  color: white;
-}
-
-#cancel:hover{
-  background-color:#fa8381;
-}
-
 /*Task preview*/
 
 .taskPreview {
@@ -91,10 +82,22 @@ button {
 
 .taskPreview p{
   background-color:white;
-  padding:10px;
+  padding:15px;
   border-radius: 8px;
 }
 
-.taskPreview p:hover{
-  background-color:rgb(221, 216, 216);
+.delete{
+  color:white;
+  float:right;
+  margin-right:5px;
+  margin-top:-8px;
+  background-color:#FF605C;
+}
+
+.delete:hover{
+  background-color:#fa8381;
+}
+
+.check{
+  float:left;
 }
