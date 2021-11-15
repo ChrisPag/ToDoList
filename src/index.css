@@ -77,17 +77,17 @@ button {
 }
 
 /*Task preview*/
-
 .taskPreview {
   margin: auto;
   width: 50%;
   text-align:center;
 }
 
-.taskPreview p{
+.taskPreview form{
   background-color:white;
   padding:15px;
   border-radius: 8px;
+  margin-bottom:10px;
 }
 
 .delete{

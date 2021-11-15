@@ -1,37 +1,42 @@
 import { useState, useEffect } from 'react';
-//import { useParams } from "react-router-dom";
 
 const Main = () => {
-    //const { id } = useParams();
     const [taskData, setTaskData] = useState(null);
-  
+    //const [checked, setChecked] = useState(false);
+
+    /*Get request to localhost, res is the response object to fetch*/
     useEffect(() => {
         fetch('http://localhost:8000/tasks')
         .then(res => {
+            /*Get data*/
             return res.json();
         })
-
         .then(data => {
             setTaskData(data);
         })
     }, [])
 
+    /*Get task ID from clicked task and delete the task*/
     const handleClick = (tid) => {
         fetch('http://localhost:8000/tasks/'+ tid,{
             method: 'DELETE'
         })
     }
 
+    /*const handleCheck = (tid) => {
+        setChecked(state=>!state);
+    }*/
+
     return(
         <div className="main">
+            {/*Displays each task*/}
             {taskData && (taskData.map(task => (
                 <div className="taskPreview" key={task.id}>
-                    <p>
-                    <input type="checkbox" className="check"></input>
+                    <form>
+                        {/*<input type="checkbox" className="check" onClick={()=> handleCheck(task.id)}></input>*/}
                         {task.desc}
-                        <button className="delete" onClick={()=>{
-                        handleClick(task.id)}}>Delete</button>
-                    </p>
+                        <button type="submit" className="delete" onClick={()=> handleClick(task.id)}>Delete</button>
+                    </form>
                 </div>
             )))}
             
