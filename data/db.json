@@ -1,19 +1,11 @@
 {
   "tasks": [
     {
-      "desc": "cook food",
-      "id": 1
-    },
-    {
-      "desc": "work out",
-      "id": 2
-    },
-    {
-      "desc": "drink coffe",
+      "desc": "go to the store",
       "id": 3
     },
     {
-      "desc": "do dishes",
+      "desc": "cook food",
       "id": 4
     }
   ]

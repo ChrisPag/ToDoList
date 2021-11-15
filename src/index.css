@@ -29,6 +29,10 @@ button {
 }
 
 /*Create*/
+.taskContainer{
+  background-color:#FFCD01;
+}
+
 #addTask{
   background-color:#74648C;
   color: white;
@@ -44,8 +48,8 @@ button {
   width:35%;
   margin: 0;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top:150px;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -100,4 +104,8 @@ button {
 
 .check{
   float:left;
+}
+
+.main {
+  margin-top:100px;
 }

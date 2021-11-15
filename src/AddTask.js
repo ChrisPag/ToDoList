@@ -21,13 +21,15 @@ const AddTask = () =>{
         /*updates state of showTask which rerenders react so button 
         can be clicked twice*/
         setShowTask(state=> !state);
-        setShowCancel(state=> !state)
+        setShowCancel(state=> !state);
     }
 
     return (
-        <div>          
-            <button id="addTask" onClick={handleClick}>{buttonDesc}</button>
-            {showTask && <Tasks />} 
+        <div className="taskContainer">          
+            <button id="addTask" onClick={handleClick}>
+                {buttonDesc}</button>
+            {showTask && 
+            <Tasks />} 
         </div>
     )
 }

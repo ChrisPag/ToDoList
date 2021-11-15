@@ -1,5 +1,4 @@
 import Navbar from './Navbar';
-import AddTask from './AddTask';
 import Main from './Main';
 
 function App() {
@@ -8,8 +7,7 @@ function App() {
       <header className="App-header">
         <Navbar />
         <Main />
-        <AddTask />
-      {/*<Create/>*/}
+
       </header>
     </div>
   );
