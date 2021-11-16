@@ -8,8 +8,9 @@
 
 button {
   border:none;
-  border-radius:8px;
-  padding: 10px;
+  /*border-radius:8px;
+  padding: 10px;*/
+  color:white;
 }
 
 /*Navbar*/
@@ -17,7 +18,6 @@ button {
   height:100px;
   width: 100%;
   background-color:#FFCD01;
-  /*center items in navbar*/
   align-items: center;
   justify-content: center;
   display: flex;
@@ -35,8 +35,9 @@ button {
 
 #addTask{
   background-color:#74648C;
-  color: white;
   float:right;
+  border-radius:8px;
+  padding: 10px;
 }
 
 #addTask:hover {
@@ -52,6 +53,8 @@ button {
   top:150px;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  /*display:grid;
+  grid-template-columns:200px 50px;*/
 }
 
 .tasks input {
@@ -65,15 +68,21 @@ button {
 .tasks button {
   margin-top: 5px;
   margin-right: 5px;
+  border-radius:8px;
+  padding: 10px;
 }
 
 #done {
   background-color:#00CA4E;
-  color: white;
 }
 
 #done:hover{
   background-color:#2fdf72;
+}
+
+/*Main*/
+.main {
+  margin-top:100px;
 }
 
 /*Task preview*/
@@ -81,6 +90,11 @@ button {
   margin: auto;
   width: 50%;
   text-align:center;
+  
+}
+
+.taskPreview img {
+  background-color:white;
 }
 
 .taskPreview form{
@@ -90,22 +104,44 @@ button {
   margin-bottom:10px;
 }
 
-.delete{
-  color:white;
-  float:right;
-  margin-right:5px;
-  margin-top:-8px;
-  background-color:#FF605C;
+/*This allows the image to change on hover*/
+.taskPreview:hover .showOnHover {
+  display:block;
 }
 
-.delete:hover{
-  background-color:#fa8381;
+.taskPreview:hover .hideOnHover {
+  display:none;
 }
+
+.showOnHover{
+  display:none;
+}
+
+/*Delete and checkboxes*/
+.delete{
+  float:right;
+  margin-right:5px;
+  margin-top:-5px;
+  background-color:white;
+}
+
+
 
 .check{
   float:left;
 }
 
-.main {
-  margin-top:100px;
+#deleteChecked {
+  background-color:#FF605C;
+  position: absolute;
+  left: 50%;
+  margin-top:20px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius:8px;
+  padding: 10px;
+}
+
+#deleteChecked:hover {
+  background-color:#fa8381;
 }
