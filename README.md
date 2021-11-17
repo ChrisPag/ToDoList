@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# To-Do List Project
+
+## What it does
+This app allows users to manage tasks on a to-do list:
+They can add tasks, delete one at a time or delete multiple at the same time.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
