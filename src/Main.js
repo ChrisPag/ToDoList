@@ -5,10 +5,7 @@ import Iconx2 from './Iconx2.png';
 
 const Main = () => {
     const [taskData, setTaskData] = useState(null);
-    /*const [checkData, setCheckData] = useState({
-        taskid: '',
-        checked: false,
-    })*/
+    const [numObjects, setNumObjects] = useState();
 
     /*Get request to localhost, res is the response object to fetch
     set fetched data as the task data to map*/
@@ -20,8 +17,32 @@ const Main = () => {
         })
         .then(data => {
             setTaskData(data);
+            setNumObjects(data.length);
         })
     }, [])
+
+    const deleteSelected = () => {
+        /*Get index of checked*/
+        for(let i=0; i<checked.length;i++){
+            if (checked[i] === true){
+                fetch('http://localhost:8000/tasks/'+ taskData[i].id,{
+                    method: 'DELETE'
+                })
+            }
+        }
+    }
+
+    /*Create an array of boolean values with same number of objects*/
+    let checked = new Array(numObjects).fill(false);
+
+    const handleCheck = (tid) =>{
+        /*Get index of task ID*/
+        const index = taskData.findIndex(task => task.id === tid);
+        
+        /*Checked index is task ID index, when clicked the state toggles between 
+        true and false*/
+        checked[index] = !checked[index];
+    }    
 
     /*Get task ID from clicked task and delete the task*/
     const handleClick = (tid) => {
@@ -30,30 +51,19 @@ const Main = () => {
         })
     }
 
-    /*const handleCheck = (tid) => {
-        setCheckData(prevState => ({
-            taskid: tid,
-            checked: !prevState.checked
-        }));
-    }
-
-    const deleteSelected = (tid) => {
-        if (checkData.checked ===true)
-
-    }
-
-    useEffect(()=>{
-        console.log(checkData);
-    }, [checkData])*/
-
     return(
         <div className="main">
             {/*Displays each task*/}
             {taskData && (taskData.map(task => (
                 <div className="taskPreview" key={task.id}>
                     <form>
-                        {/*<input type="checkbox" className="check" onClick={()=> handleCheck(task.id)}></input>*/}
-                        <input type="checkbox" className="check"></input>
+                        <input 
+                            type="checkbox" 
+                            className="check" 
+                            onClick={() => handleCheck(task.id)}
+                        >
+                        </input>
+
                         {task.desc}
                         <button type="submit" className="delete" onClick={()=> handleClick(task.id)}>
                             <img className="hideOnHover" src={Iconx} alt="delete button" />
@@ -62,7 +72,9 @@ const Main = () => {
                     </form>
                 </div>
             )))}
-            <button id="deleteChecked">Delete Checked</button>
+            <form>
+                <button type="submit" id="deleteChecked" onClick={()=> deleteSelected()}>Delete Checked</button>
+            </form>
         </div>
     );
 }

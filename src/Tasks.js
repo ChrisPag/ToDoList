@@ -3,10 +3,12 @@ import React from 'react';
 //dont forget you changed showTask to value
 const Tasks = () => {
     const [desc, setDesc] = useState('');
+    //const [checked, setChecked] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = () => {
         //e.preventDefault();
         const task = {desc}
+        //const task = {desc}
         fetch('http://localhost:8000/tasks', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
@@ -18,8 +20,7 @@ const Tasks = () => {
 
     //changed keepShow to addClicked
     return (
-        <div className="tasks">
-            {//addClicked &&
+        <div className="tasks">    
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -29,7 +30,6 @@ const Tasks = () => {
                 />
                 <button type="submit" id="done">Done</button>
             </form>
-            }
         </div>
     );
 }

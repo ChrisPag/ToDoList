@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useState } from 'react';
 import Tasks from './Tasks';
 
 const AddTask = () =>{
@@ -6,9 +6,9 @@ const AddTask = () =>{
     const [showCancel, setShowCancel] = useState(false);
     let buttonDesc = "Add Task";
 
-    useEffect(() => {
+    /*useEffect(() => {
         console.log("changed setshowtask");
-    },[showTask]);
+    },[showTask]);*/
 
     if(showCancel){
         buttonDesc = "Cancel";
