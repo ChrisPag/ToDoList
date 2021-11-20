@@ -4,11 +4,12 @@
 This app allows users to manage tasks on a to-do list:
 They can add tasks, delete one at a time or delete multiple at the same time.
 
+![image](https://user-images.githubusercontent.com/73495203/142727942-4dc65c33-2857-4ca0-bb73-9ddfad55a1bc.png)
+
 ## Technologies
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - JSON-server was used to create a fake REST API simply and quickly. It can be used by running
 ### `npx json-server --watch data/db.json --port 8000`
-
 
 ## Available Scripts
 
