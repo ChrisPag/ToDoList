@@ -1,12 +1,14 @@
 # To-Do List Project
 
-## What it does
+## General Info
 This app allows users to manage tasks on a to-do list:
 They can add tasks, delete one at a time or delete multiple at the same time.
 
-## Getting Started with Create React App
+## Technologies
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- JSON-server was used to create a fake REST API simply and quickly. It can be used by running
+### `npx json-server --watch data/db.json --port 8000`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
